@@ -15,6 +15,7 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -93,8 +94,12 @@ public class MasterNode {
 //            hiloDM.start();
 //            hiloBI.start();
             Queue dat = (Queue)registry.lookup("Queue");
-                    String ret = dat.obtenerMensajes();
-                    System.out.println(ret);
+                    ArrayList<String> hola = new ArrayList<String>();
+                      
+                    dat.publicar("Hola que hace",hola );
+                    //String ret = dat.obtenerMensajes();
+                    
+                    //System.out.println(ret);
         } catch (RemoteException ex) {
             Logger.getLogger(MasterNode.class.getName()).log(Level.SEVERE, null, ex);
         }

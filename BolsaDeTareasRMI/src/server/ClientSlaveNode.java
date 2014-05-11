@@ -22,15 +22,15 @@ public class ClientSlaveNode implements Queue {
     private Registry registry;
 
     @Override
-    public String obtenerMensajes() throws RemoteException{
+    public ArrayList<String> obtenerMensajes() throws RemoteException{
         ArrayList<String> prueba = new ArrayList<String>();
         prueba.add("Me invocaste");
-        return "prueba";
+        return prueba;
     }
 
     @Override
-    public void publicar(String publicacion, ArrayList<String> amigo) throws RemoteException{
-        System.out.println("Soy tu padre");
+    public void publicar(String publication, ArrayList<String> friends) throws RemoteException{
+        System.out.println(publication);
     }
 
     ClientSlaveNode(Registry registry) throws RemoteException {

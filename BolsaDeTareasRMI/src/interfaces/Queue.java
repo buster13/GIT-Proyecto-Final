@@ -13,6 +13,6 @@ import java.util.ArrayList;
  * @author Equipo
  */
 public interface Queue extends Remote{
-    public String obtenerMensajes()throws RemoteException;
+    public ArrayList<String> obtenerMensajes()throws RemoteException;
     public void publicar(String publicacion, ArrayList<String> amigo)throws RemoteException;
 }
