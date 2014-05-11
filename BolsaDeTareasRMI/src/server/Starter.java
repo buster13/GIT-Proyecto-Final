@@ -26,13 +26,16 @@ public class Starter {
         try {
             LocateRegistry.createRegistry(1099);
             Registry registry = LocateRegistry.getRegistry();
+//            
+//            SlaveNode nodo1 = new SlaveNode("Bioinformatics", registry);
+//            SlaveNode nodo2 = new SlaveNode("DataMining", registry);
+//            SlaveNode nodo3 = new SlaveNode("ImageProcessing", registry);
+//            nodo1.start();
+//            nodo2.start();
+//            nodo3.start();
+            ClientSlaveNode node1 = new ClientSlaveNode(registry);
+            node1.start();
             
-            SlaveNode nodo1 = new SlaveNode("Bioinformatics", registry);
-            SlaveNode nodo2 = new SlaveNode("DataMining", registry);
-            SlaveNode nodo3 = new SlaveNode("ImageProcessing", registry);
-            nodo1.start();
-            nodo2.start();
-            nodo3.start();
             
         } catch (RemoteException ex) {
             Logger.getLogger(Starter.class.getName()).log(Level.SEVERE, null, ex);
