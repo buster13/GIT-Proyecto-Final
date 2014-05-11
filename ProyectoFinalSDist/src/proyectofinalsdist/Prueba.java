@@ -15,5 +15,6 @@ public class Prueba {
     int a;
     int b;
     String hefesto_es_chingon;
+    int ya;
     
 }
