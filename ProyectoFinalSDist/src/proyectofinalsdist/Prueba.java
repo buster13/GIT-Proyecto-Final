@@ -12,4 +12,6 @@ package proyectofinalsdist;
  */
 public class Prueba {
     
+    int a;
+    
 }
