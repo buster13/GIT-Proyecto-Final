@@ -24,13 +24,13 @@ import java.util.logging.Logger;
 public class MasterNode {
     
     public static void main(String[] args) throws NotBoundException{
-        System.setProperty("java.security.policy","C:\\Users\\Equipo\\Documents\\NetBeansProjects\\BolsaDeTareasRMI\\src\\client\\client.policy");
+        System.setProperty("java.security.policy","C:\\Users\\BusterD\\Dropbox\\ITAM\\X Semestre\\Sistemas Distribuidos\\GIT Proyecto Final\\BolsaDeTareasRMI\\src\\client\\client.policy");
         if (System.getSecurityManager() == null) {
             System.setSecurityManager(new SecurityManager());
         }
         Registry registry; 
         try {
-            registry = LocateRegistry.getRegistry("localhost"); // server's ip address
+            registry = LocateRegistry.getRegistry("192.168.0.25"); // server's ip address
             
             Task[] BoTIP = {
 

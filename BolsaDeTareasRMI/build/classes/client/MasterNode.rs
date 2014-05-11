@@ -1,2 +1,0 @@
-client.MyThread
-client.MasterNode
