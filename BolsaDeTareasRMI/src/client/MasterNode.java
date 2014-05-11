@@ -9,6 +9,7 @@ package client;
 import interfaces.Bioinformatics;
 import interfaces.DataMining;
 import interfaces.ImageProcessing;
+import interfaces.Queue;
 import interfaces.Task;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -85,13 +86,15 @@ public class MasterNode {
                 new Task("T45", "Bioinformatics", (long)30000)
             };
             
-            MyThread hiloIP = new MyThread(BoTIP, registry);
-            MyThread hiloDM = new MyThread(BoTDM, registry);
-            MyThread hiloBI = new MyThread(BoTBI, registry);
-            hiloIP.start();
-            hiloDM.start();
-            hiloBI.start();
-            
+//            MyThread hiloIP = new MyThread(BoTIP, registry);
+//            MyThread hiloDM = new MyThread(BoTDM, registry);
+//            MyThread hiloBI = new MyThread(BoTBI, registry);
+//            hiloIP.start();
+//            hiloDM.start();
+//            hiloBI.start();
+            Queue dat = (Queue)registry.lookup("Queue");
+                    String ret = dat.obtenerMensajes();
+                    System.out.println(ret);
         } catch (RemoteException ex) {
             Logger.getLogger(MasterNode.class.getName()).log(Level.SEVERE, null, ex);
         }
