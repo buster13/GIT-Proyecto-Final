@@ -1,5 +1,15 @@
 /FinalProjectServerDir/nbproject/private/
 /ProyectoFinalSDist/nbproject/private/
+<<<<<<< HEAD
 /BolsaDeTareasRMI/build/
 /BolsaDeTareasRMI/dist/
 /BolsaDeTareasRMI/nbproject/private/
+=======
+/BolsaDeTareasRMI/nbproject/private/
+/BolsaDeTareasRMI/dist/
+/BolsaDeTareasRMI/build/
+/SOAPServer/nbproject/private/
+/SOAPServer/build/
+/SOAPServer/dist/
+BolsaDeTareasRMI/build/classes/client/MasterNode.class
+>>>>>>> ef18c2f383d97e463753d80f6f957728d320b5bd
