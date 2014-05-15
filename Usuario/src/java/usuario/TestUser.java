@@ -118,7 +118,7 @@ public class TestUser {
             //messageConsumer = session.createConsumer(queue);
             QueueBrowser browser = session.createBrowser(queue);
             messageEnumeration = browser.getEnumeration();
-
+            
             if (messageEnumeration != null) {
                 if (!messageEnumeration.hasMoreElements()) {
                     System.out.println("There are no messages " + "in the queue.");
@@ -127,10 +127,13 @@ public class TestUser {
                     while (messageEnumeration.hasMoreElements()) {
                         textMessage = (TextMessage) messageEnumeration.nextElement();
                         System.out.println(textMessage.getText());
-                        saveInFile(textMessage.getText(),"FeedsOf"+username);
+                       saveInFile(textMessage.getText(),"FeedsOf"+username);
                     }
                 }
             }
+            browser.getQueue();
+            browser.close();
+            //session.commit();
             session.close();
             connection.close();
 

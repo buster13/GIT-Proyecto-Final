@@ -42,7 +42,7 @@ public class MainUser {
         this.username = u;
         this.country = c;
     }
-
+    //Abre un archivo llamado FriendsOf+username, guarda los amigos en un arraylist y lanza el iterador
     public Iterator obtainFriends() {
         ArrayList<String> list = new ArrayList<String>();
         try {
@@ -69,7 +69,7 @@ public class MainUser {
         }
         return list.iterator();
     }
-
+//Cuando se quiera agregar un amigo o mandar una publicacion, abre el archivo que le digas y guarda la publicacion o el amigo
     public void saveInFile(String p, String filename) {
         File f;
         //Name of the file could be: FeedsOf+username or FriendsOf+username
