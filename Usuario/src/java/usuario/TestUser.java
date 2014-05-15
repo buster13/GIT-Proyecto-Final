@@ -65,12 +65,13 @@ public class TestUser {
         return list.iterator();
     }
 
-    public void saveInFile(String p,String filename) {
+    public void saveInFile(String p,String filename, boolean append) {
         File f;
         //Name of the file could be: FeedsOf+username or FriendsOf+username
         f = new File(filename);
         try {
-            FileWriter w = new FileWriter(f,true);
+            //true significa que es append, false significa que sobrescribe
+            FileWriter w = new FileWriter(f,append);
             BufferedWriter bw = new BufferedWriter(w);
             PrintWriter wr = new PrintWriter(bw);
             wr.println(p);
@@ -93,7 +94,7 @@ public class TestUser {
             messageProducer = session.createProducer(queue);
             textMessage = session.createTextMessage();
             textMessage.setText(message);
-            saveInFile(message,"FeedsOf"+username);
+            saveInFile(message,"FeedsOf"+username,true);
             System.out.println("Sending the following message: " + textMessage.getText());
             messageProducer.send(textMessage);
             messageProducer.close();
@@ -127,7 +128,7 @@ public class TestUser {
                     while (messageEnumeration.hasMoreElements()) {
                         textMessage = (TextMessage) messageEnumeration.nextElement();
                         System.out.println(textMessage.getText());
-                       saveInFile(textMessage.getText(),"FeedsOf"+username);
+                       saveInFile(textMessage.getText(),"FeedsOf"+username,false);
                     }
                 }
             }
