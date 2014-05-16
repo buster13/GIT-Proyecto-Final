@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="SOAPServMEXICO">
+      <implementation-class>WebServices.SOAPServMEXICO</implementation-class>
+    </service>
+    <service name="SOAPServQATAR">
+      <implementation-class>WebServices.SOAPServQATAR</implementation-class>
+    </service>
+    <service name="SOAPServANGOLA">
+      <implementation-class>WebServices.SOAPServANGOLA</implementation-class>
+    </service>
+    <service name="SOAPServPOLONIA">
+      <implementation-class>WebServices.SOAPServPOLONIA</implementation-class>
+    </service>
+    <service name="SOAPServREPCHECA">
+      <implementation-class>WebServices.SOAPServREPCHECA</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>

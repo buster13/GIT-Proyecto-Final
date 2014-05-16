@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/SOAPServMEXICO/SOAPServMEXICO?WSDL" uri="xml-resources/web-service-references/SOAPServMEXICO/wsdl/localhost_8080/SOAPServMEXICO/SOAPServMEXICO.wsdl"/>
+    <system systemId="http://localhost:8080/SOAPServMEXICO/SOAPServMEXICO?xsd=1" uri="xml-resources/web-service-references/SOAPServMEXICO/wsdl/localhost_8080/SOAPServMEXICO/SOAPServMEXICO.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SOAPServMEXICO/SOAPServMEXICO?xsd=2" uri="xml-resources/web-service-references/SOAPServMEXICO/wsdl/localhost_8080/SOAPServMEXICO/SOAPServMEXICO.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/SOAPServer/SOAPServQATAR?WSDL" uri="xml-resources/web-service-references/SOAPServQATAR/wsdl/localhost_8080/SOAPServer/SOAPServQATAR.wsdl"/>
+    <system systemId="http://localhost:8080/SOAPServer/SOAPServQATAR?xsd=1" uri="xml-resources/web-service-references/SOAPServQATAR/wsdl/localhost_8080/SOAPServer/SOAPServQATAR.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SOAPServer/SOAPServQATAR?xsd=2" uri="xml-resources/web-service-references/SOAPServQATAR/wsdl/localhost_8080/SOAPServer/SOAPServQATAR.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/SOAPServer/SOAPServANGOLA?WSDL" uri="xml-resources/web-service-references/SOAPServANGOLA/wsdl/localhost_8080/SOAPServer/SOAPServANGOLA.wsdl"/>
+    <system systemId="http://localhost:8080/SOAPServer/SOAPServANGOLA?xsd=1" uri="xml-resources/web-service-references/SOAPServANGOLA/wsdl/localhost_8080/SOAPServer/SOAPServANGOLA.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SOAPServer/SOAPServANGOLA?xsd=2" uri="xml-resources/web-service-references/SOAPServANGOLA/wsdl/localhost_8080/SOAPServer/SOAPServANGOLA.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/SOAPServer/SOAPServPOLONIA?WSDL" uri="xml-resources/web-service-references/SOAPServPOLONIA/wsdl/localhost_8080/SOAPServer/SOAPServPOLONIA.wsdl"/>
+    <system systemId="http://localhost:8080/SOAPServer/SOAPServPOLONIA?xsd=1" uri="xml-resources/web-service-references/SOAPServPOLONIA/wsdl/localhost_8080/SOAPServer/SOAPServPOLONIA.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SOAPServer/SOAPServPOLONIA?xsd=2" uri="xml-resources/web-service-references/SOAPServPOLONIA/wsdl/localhost_8080/SOAPServer/SOAPServPOLONIA.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/SOAPServer/SOAPServREPCHECA?WSDL" uri="xml-resources/web-service-references/SOAPServREPCHECA/wsdl/localhost_8080/SOAPServer/SOAPServREPCHECA.wsdl"/>
+    <system systemId="http://localhost:8080/SOAPServer/SOAPServREPCHECA?xsd=1" uri="xml-resources/web-service-references/SOAPServREPCHECA/wsdl/localhost_8080/SOAPServer/SOAPServREPCHECA.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SOAPServer/SOAPServREPCHECA?xsd=2" uri="xml-resources/web-service-references/SOAPServREPCHECA/wsdl/localhost_8080/SOAPServer/SOAPServREPCHECA.xsd_2.xsd"/>
+</catalog>

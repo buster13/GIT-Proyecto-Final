@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-SOAPServMEXICO" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SOAPServMEXICO"/>
+        <property name="wsdl-SOAPServMEXICO" location="xml-resources/web-service-references/SOAPServMEXICO/wsdl/localhost_8080/SOAPServMEXICO/SOAPServMEXICO.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SOAPServMEXICO" destdir="${build.generated.dir}/jax-wsCache/SOAPServMEXICO" wsdl="${wsdl-SOAPServMEXICO}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/SOAPServMEXICO/SOAPServMEXICO?WSDL" xnocompile="true" xendorsed="true" package="webservices">
+            <depends file="${wsdl-SOAPServMEXICO}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SOAPServMEXICO"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SOAPServMEXICO">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SOAPServMEXICO" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/SOAPServMEXICO"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/webservices"/>
+    </target>
+    <target name="wsimport-client-SOAPServQATAR" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SOAPServQATAR"/>
+        <property name="wsdl-SOAPServQATAR" location="xml-resources/web-service-references/SOAPServQATAR/wsdl/localhost_8080/SOAPServer/SOAPServQATAR.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SOAPServQATAR" destdir="${build.generated.dir}/jax-wsCache/SOAPServQATAR" wsdl="${wsdl-SOAPServQATAR}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/SOAPServer/SOAPServQATAR?WSDL" xnocompile="true" xendorsed="true" package="webservicesQ">
+            <depends file="${wsdl-SOAPServQATAR}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SOAPServQATAR"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SOAPServQATAR">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SOAPServQATAR" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/SOAPServQATAR"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/webservicesQ"/>
+    </target>
+    <target name="wsimport-client-SOAPServANGOLA" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SOAPServANGOLA"/>
+        <property name="wsdl-SOAPServANGOLA" location="xml-resources/web-service-references/SOAPServANGOLA/wsdl/localhost_8080/SOAPServer/SOAPServANGOLA.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SOAPServANGOLA" destdir="${build.generated.dir}/jax-wsCache/SOAPServANGOLA" wsdl="${wsdl-SOAPServANGOLA}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/SOAPServer/SOAPServANGOLA?WSDL" xnocompile="true" xendorsed="true" package="webservicesA">
+            <depends file="${wsdl-SOAPServANGOLA}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SOAPServANGOLA"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SOAPServANGOLA">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SOAPServANGOLA" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/SOAPServANGOLA"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/webservicesA"/>
+    </target>
+    <target name="wsimport-client-SOAPServPOLONIA" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SOAPServPOLONIA"/>
+        <property name="wsdl-SOAPServPOLONIA" location="xml-resources/web-service-references/SOAPServPOLONIA/wsdl/localhost_8080/SOAPServer/SOAPServPOLONIA.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SOAPServPOLONIA" destdir="${build.generated.dir}/jax-wsCache/SOAPServPOLONIA" wsdl="${wsdl-SOAPServPOLONIA}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/SOAPServer/SOAPServPOLONIA?WSDL" xnocompile="true" xendorsed="true" package="webservicesP">
+            <depends file="${wsdl-SOAPServPOLONIA}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SOAPServPOLONIA"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SOAPServPOLONIA">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SOAPServPOLONIA" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/SOAPServPOLONIA"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/webservicesP"/>
+    </target>
+    <target name="wsimport-client-SOAPServREPCHECA" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SOAPServREPCHECA"/>
+        <property name="wsdl-SOAPServREPCHECA" location="xml-resources/web-service-references/SOAPServREPCHECA/wsdl/localhost_8080/SOAPServer/SOAPServREPCHECA.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SOAPServREPCHECA" destdir="${build.generated.dir}/jax-wsCache/SOAPServREPCHECA" wsdl="${wsdl-SOAPServREPCHECA}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/SOAPServer/SOAPServREPCHECA?WSDL" xnocompile="true" xendorsed="true" package="webservicesR">
+            <depends file="${wsdl-SOAPServREPCHECA}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SOAPServREPCHECA"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SOAPServREPCHECA">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SOAPServREPCHECA" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/SOAPServREPCHECA"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/webservicesR"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-SOAPServMEXICO, wsimport-client-SOAPServQATAR, wsimport-client-SOAPServANGOLA, wsimport-client-SOAPServPOLONIA, wsimport-client-SOAPServREPCHECA"/>
+</project>
