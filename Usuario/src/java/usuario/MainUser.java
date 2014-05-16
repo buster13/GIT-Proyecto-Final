@@ -18,7 +18,7 @@ import javax.jms.MessageProducer;
 import javax.jms.Queue;
 import javax.jms.QueueBrowser;
 import javax.jms.Session;
-import javax.jms.TextMessage;
+import javax.jms.ObjectMessage;
 import java.util.Scanner;
 
 /**
@@ -85,9 +85,9 @@ public class MainUser {
         };
     }
 
-    public void produceMessages(String message) {
+    public void produceMessages(String message, String type) {
         MessageProducer messageProducer;
-        TextMessage textMessage;
+        ObjectMessage objectMessage;
         try {
             Connection connection = connectionFactory.createConnection();
             Session session = connection.createSession(false /*Transacter*/, Session.AUTO_ACKNOWLEDGE);
@@ -96,11 +96,12 @@ public class MainUser {
             while (it.hasNext()) {
                 queue = session.createQueue((String) it.next());
                 messageProducer = session.createProducer(queue);
-                textMessage = session.createTextMessage();
-                textMessage.setText(message);
+                objectMessage = session.createObjectMessage();
+                Mensaje publicacion = new Mensaje(username,message,type);
+                objectMessage.setObject(publicacion);
                 saveInFile(message, "FeedsOf" + username,true);
-                System.out.println("Sending the following message: " + textMessage.getText());
-                messageProducer.send(textMessage);
+                System.out.println("Sending the following message: " + message);
+                messageProducer.send(objectMessage);
                 messageProducer.close();
             }
             session.close();
@@ -113,13 +114,14 @@ public class MainUser {
     public void getMessages() {
         Connection connection;
 
-        TextMessage textMessage;
+        ObjectMessage objectMessage;
 
         try {
             connection = connectionFactory.createConnection();
             Enumeration messageEnumeration;
             Session session = connection.createSession(false /*Transacter*/, Session.AUTO_ACKNOWLEDGE);
             queue = session.createQueue(username);
+            Mensaje aux;
             //messageConsumer = session.createConsumer(queue);
             QueueBrowser browser = session.createBrowser(queue);
             messageEnumeration = browser.getEnumeration();
@@ -130,9 +132,16 @@ public class MainUser {
                 } else {
                     System.out.println("The following messages are in the queue:");
                     while (messageEnumeration.hasMoreElements()) {
-                        textMessage = (TextMessage) messageEnumeration.nextElement();
-                        System.out.println(textMessage.getText());
-                        saveInFile(textMessage.getText(), "FeedsOf" + username,false);
+                        objectMessage = (ObjectMessage) messageEnumeration.nextElement();
+                        aux = (Mensaje) objectMessage.getObject();
+                        if(aux.getType().equals("publication")){
+                            String publication=aux.getSender()+": "+aux.getMessage();
+                            System.out.println(publication);
+                            saveInFile(publication,"FeedsOf" + username,false);
+                        }else{
+                            System.out.println("Haz agregado a "+aux.getSender()+" como amigo");
+                            saveInFile(aux.getSender(),"FriendsOf"+username,true);
+                        }
                     }
                 }
             }
@@ -176,6 +185,28 @@ public class MainUser {
             }
         }
         user.getMessages();
+        System.out.println("Quieres agregar un nuevo amigo? (S/N)");
+        aux = keyboard.nextLine();
+        registro = false;
+        aux=aux.toUpperCase();
+        while (!registro) {
+            if (aux.charAt(0) == 'S' || aux.charAt(0) == 'N') {
+                if (aux.charAt(0) == 'S') {
+                    System.out.println("Escribe el username de tu amigo:");
+                    System.out.println("Escribe 'Fin' cuando ya no agregar mas amigos");
+                    aux = keyboard.nextLine();
+                    while(!aux.equals("Fin")){
+                        user.produceMessages(aux,"friend");
+                        System.out.println("Agrega otro amigo:");
+                        aux = keyboard.nextLine();
+                    }
+                }
+                    registro = true;
+            } else {
+                System.out.println("Por favor escirbe S o N.");
+                aux =keyboard.nextLine();
+            }
+        }
         System.out.println("Quieres escribir alguna publicacion? (S/N)");
         aux = keyboard.nextLine();
         registro = false;
@@ -187,7 +218,7 @@ public class MainUser {
                     System.out.println("Escribe 'Fin' cuando ya no quieras compartir");
                     aux = keyboard.nextLine();
                     while(!aux.equals("Fin")){
-                        user.produceMessages(aux);
+                        user.produceMessages(aux,"publication");
                         System.out.println("Sigue escribiendo aqui:");
                         aux = keyboard.nextLine();
                     }
@@ -198,6 +229,7 @@ public class MainUser {
                 aux =keyboard.nextLine();
             }
         }
+        
         System.out.println("Haz cerrado sesion");
     }
 }
